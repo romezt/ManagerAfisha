@@ -3,11 +3,6 @@ package ru.netology.domain;
 public class Manager {
 
     public NewMovie[] movies = new NewMovie[0];
-    NewMovie Bloodshot = new NewMovie(1, "pictureUrl1", "Бладшот", "боевик");
-    NewMovie Forward = new NewMovie(2, "pictureUrl2", "Вперед", "мультфильм");
-    NewMovie Hotel = new NewMovie(3, "pictureUrl3", "Отель 'Белград'", "комедия");
-
-    //movies[0] = Hotel;
 
     int movieLimit = 10;
 
@@ -17,7 +12,6 @@ public class Manager {
 
     public Manager(){
     }
-
 
     public void add(NewMovie movie) {
         int length = movies.length + 1;
