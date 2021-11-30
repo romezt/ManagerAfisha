@@ -2,15 +2,15 @@ package ru.netology.domain;
 
 public class Manager {
 
-    public NewMovie[] movies = new NewMovie[0];
+    private NewMovie[] movies = new NewMovie[0];
 
-    int movieLimit = 10;
+    private int movieLimit = 10;
 
     public Manager(int movieLimit) {
         this.movieLimit = movieLimit;
     }
 
-    public Manager(){
+    public Manager() {
     }
 
     public void add(NewMovie movie) {
@@ -29,14 +29,14 @@ public class Manager {
     public NewMovie[] getAll() {
         NewMovie[] movies = findAll();
         int resultLength;
-        if (movieLimit > 10) {
-            resultLength = 10;
+        if (movieLimit > findAll().length) {
+            resultLength = findAll().length;
         } else {
             resultLength = movieLimit;
         }
         NewMovie[] result = new NewMovie[resultLength];
         for (int i = 0; i < result.length; i++) {
-            int index = resultLength - i - 1 ;
+            int index = resultLength - i - 1;
             result[i] = movies[index];
         }
         return result;
